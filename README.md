@@ -17,10 +17,8 @@ coming soon!
 * API: [https://jhu-bonsai-api.herokuapp.com/](https://jhu-bonsai-api.herokuapp.com/) -->
 
 ## Documentation
-coming soon!
-<!-- * [Project Document](https://docs.google.com/document/d/1zt9AIEC30VXZO0WcSJViF-G2vsBK9pgd8TKFH6jKv1s)
-* [User Manual](https://cs421sp22-homework.github.io/team-11-spontaneous-bonsai/)
-* [API Documentation](https://cs421sp22-homework.github.io/team-11-spontaneous-bonsai/) -->
+* [Project Document](https://docs.google.com/document/d/10v6VU6ZDR-e_daNKEkWLCLpvgx5ITTfDeZg2vJAx4DI/edit?usp=sharing)
+user manual and api documentation coming soon!
 
 ## Installing / Getting started
 
