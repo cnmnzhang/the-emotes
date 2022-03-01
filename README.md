@@ -18,7 +18,7 @@ coming soon!
 
 ## Documentation
 * [Project Document](https://docs.google.com/document/d/10v6VU6ZDR-e_daNKEkWLCLpvgx5ITTfDeZg2vJAx4DI/edit?usp=sharing)
-user manual and api documentation coming soon!
+* user manual and api documentation coming soon!
 
 ## Installing / Getting started
 
