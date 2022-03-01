@@ -12,8 +12,9 @@ Working to create a journaling and self-care website and app that includes an an
 
 
 ## Deployments
-* App: [https://jhu-bonsai.herokuapp.com/](https://jhu-bonsai.herokuapp.com/)
-* API: [https://jhu-bonsai-api.herokuapp.com/](https://jhu-bonsai-api.herokuapp.com/)
+coming soon!
+<!-- * App: [https://jhu-bonsai.herokuapp.com/](https://jhu-bonsai.herokuapp.com/)
+* API: [https://jhu-bonsai-api.herokuapp.com/](https://jhu-bonsai-api.herokuapp.com/) -->
 
 ## Documentation
 coming soon!
@@ -27,8 +28,7 @@ To run the app locally, follow the instructions below.
 
 ### Backend
 
-coming soon!
-Navigate to the `code/backend` directory. Create a `.env` file with the necessary environment variables (`MONGODB_PASSWORD`, and `PORT`) and run the following commands to start the backend server:
+Navigate to the `server` directory. Create a `config.env` file with the necessary environment variables (`MONGODB_PASSWORD`, and `PORT`) and run the following commands to start the backend server:
 
 ```shell
 $ npm install
@@ -37,7 +37,7 @@ $ npm start
 
 ### Frontend
 
-In a new terminal session, navigate to the `code/frontend/` directory. Create a `.env` file with the necessary environment variables (`REACT_APP_API_URL` = [url where you locally deployed the backend]). Run the following commands to start the frontend application:
+In a new terminal session, navigate to the `code/frontend/` directory. Run the following commands to start the frontend application:
 
 ```shell
 $ npm install
@@ -53,14 +53,6 @@ $ npm start
 * [VSCode](https://code.visualstudio.com/Download)
 
 Other tools are node packages, which are listed in `code/backend/package.json` and `code/frontend/package.json`. They will be installed when running the installation processes above
-
-### Code Style/Formatting 
-Run [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) in `code/frontend` or `code/backend` with the following:
-
-```shell
-$ npm run lint
-$ npm run pretty
-```
 
 ### Testing 
 coming soon!
