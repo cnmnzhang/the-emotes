@@ -35,7 +35,7 @@ $ npm start
 
 ### Frontend
 
-In a new terminal session, navigate to the `code/frontend/` directory. Run the following commands to start the frontend application:
+In a new terminal session, navigate to the `client/` directory. Run the following commands to start the frontend application:
 
 ```shell
 $ npm install
