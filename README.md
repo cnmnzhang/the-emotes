@@ -1,5 +1,5 @@
 # The Emotes
-Working to create a journaling and self-care website and app that includes an anonymous, community-based forum and a user-specific, personalized space for self-expression and feedback
+Working to create a journaling and self-care website and app that includes an anonymous, community-based forum and a user-specific, personalized space for self-expression and feedback. This application is being built using the MERN stack with a client front-end and a server back-end. 
 
 **Team**
 
@@ -21,7 +21,7 @@ coming soon!
 * user manual and api documentation coming soon!
 
 ## Installing / Getting started
-
+[Node.js](https://nodejs.org/en/download/) is required.
 To run the app locally, follow the instructions below.
 
 ### Backend
