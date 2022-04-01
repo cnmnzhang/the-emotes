@@ -7,7 +7,7 @@ const HomePage = () => {
       <header className="App-header">
           <div>
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="text-3xl">emotes</h1>
+        <h1 className="text-3xl ">emotes</h1>
 
           </div>
       </header>
