@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 import Entry from "../components/Entry";
 import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 
 function Home() {
     const sampleNotes = [
@@ -16,15 +18,49 @@ function Home() {
             body: "one more body",
         },
     ];
-    return (
-        <div className="fixed h-full w-full bg-cyan-50 overflow-auto">
-            <Header />
+    const [showSideBar, setShowSideBar] = useState(false);
+    const openSideBar = () => {
+        setShowSideBar(!showSideBar);
+        return (
+            <Sidebar />
+        );
+    }
+    const sideBar = () => {
+        if (showSideBar) {
+            return (
+                <div className="transition opacity-0 hover:opacity-100">
+                <Sidebar />
+                </div>
+            )
+        } else {
+            return (
+                <button className="absolute left-2 top-2 cursor-pointer" onClick={openSideBar}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            )
+        }
+    }
 
-            <div className="my-20 flex flex-col items-center align-center">
-                <div className="App-header text-5xl font-semibold">emotes</div>
-                <p className="text-3xl">
+    return (
+        <div className="fixed z-0 h-full w-full bg-sky-50 overflow-auto">
+            <Header />
+            <div className="z-50">
+                {sideBar()}
+            </div>
+
+            <div className="z-0 my-40 flex flex-col items-center align-center">
+                <div className="App-header text-8xl font-semibold">emotes</div>
+                <p className="text-3xl py-2">
                     a safe space for community based journaling and mood analyzing to
                     promote self care
+                </p>
+
+                <div className="w-1/2 border-t border-gray-300 my-10" />
+
+                <p className="text-4xl py-2 transition hover:text-rose-400 duration-500">
+                    tell the world how you feel
                 </p>
 
                 <div className="w-1/4 my-10 space-y-1">
@@ -51,10 +87,7 @@ function Home() {
                         );
                     })}
                 </div>
-
             </div>
-
-
         </div>
     );
 }
