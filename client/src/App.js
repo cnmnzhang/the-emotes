@@ -1,13 +1,30 @@
+import Entry from "./components/Entry";
 import Header from "./components/Header";
 
 function App() {
-  return (
-    <div className="fixed h-full w-full bg-cyan-50">
 
-      <div className="my-10 flex flex-col items-center align-center overflow-auto">
-        <header className="App-header text-5xl font-semibold">
+  const sampleNotes = [
+    {
+      title: "my title",
+      body: "my body"
+    },
+    {
+      title: "another title",
+      body: "another body"
+    },
+    {
+      title: "one more title",
+      body: "one more body"
+    }
+  ]
+  return (
+    <div className="fixed h-full w-full bg-cyan-50 overflow-auto">
+      <Header />
+
+      <div className="my-20 flex flex-col items-center align-center">
+        <div className="App-header text-5xl font-semibold">
           emotes
-        </header>
+        </div>
         <p className="text-3xl">
           a safe space for community based journaling and mood analyzing to promote self care
         </p>
@@ -21,10 +38,18 @@ function App() {
             placeholder="Start typing..."
             className="block w-full rounded-md border-gray-200 text-sm transition focus:border-blue-600 focus:ring-blue-600 disabled:cursor-not-allowed disabled:bg-gray-200 disabled:opacity-75"></textarea>
         </div>
-
-
       </div>
 
+      <div className="w-3/4 flex flex-col items-center">
+        {sampleNotes.map((note) => {
+          return (
+            <div>
+              <Entry title={note.title} body={note.body} />
+            </div>
+          );
+        })
+        }
+      </div>
     </div>
   );
 }
