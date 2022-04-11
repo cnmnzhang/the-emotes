@@ -29,22 +29,44 @@ function Home() {
     ];
     const [showSideBar, setShowSideBar] = useState(false);
 
-    const openSideBar = () => {
+    const toggleSideBar = () => {
         setShowSideBar(!showSideBar);
-        return <Sidebar />;
     };
     const sideBar = () => {
         if (showSideBar) {
             return (
-                <div className="transition opacity-0 hover:opacity-100">
+                <div className="flex flex-row">
+                <div className="mt-20">
                     <Sidebar />
                 </div>
+                <button
+                    className="absolute left-2 top-2 cursor-pointer"
+                    onClick={toggleSideBar}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 mr-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </button>
+
+                </div>
+                
             );
         } else {
             return (
                 <button
                     className="absolute left-2 top-2 cursor-pointer"
-                    onClick={openSideBar}
+                    onClick={toggleSideBar}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -81,9 +103,9 @@ function Home() {
 
                 <Link
                     to="/create"
-                    className="text-4xl py-2 cursor-pointer transition-[text_1s,underline_2s] duration-500 hover:text-rose-400 hover:underline decoration-dotted "
+                    className="text-4xl py-2 mb-20 cursor-pointer transition-[text_1s,underline_2s] duration-500 hover:text-rose-400 hover:underline decoration-dotted "
                 >
-                    tell the world how you feel
+                    create a post and tell the world how you feel
                 </Link>
 
                 <div className="container w-3/4">

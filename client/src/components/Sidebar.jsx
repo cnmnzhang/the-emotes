@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="flex">
-      <aside className="absolute inset-y-0 left-0 w-1/6 bg-sky-100 min-h-screen">
+      <aside className="absolute inset-y-0 left-0 w-1/6 bg-sky-100">
         <div className="sticky top-0 py-4 w-full">
           <div className="text-center font-extrabold ">emotes</div>
           <nav>
@@ -28,7 +28,7 @@ const Sidebar = () => {
                   <span className="font-bold">create a post</span>
                 </Link>
               </li>
-              <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
+              <li className="transition duration-400 hover:bg-sky-200 w-full h-full">
                 <Link to="/" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ const Sidebar = () => {
                   <span>home / community</span>
                 </Link>
               </li>
-              <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
+              <li className="transition duration-400 hover:bg-sky-200 w-full h-full">
                 <Link to="/analysis" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const Sidebar = () => {
                   <span>archive</span>
                 </a>
               </li> */}
-              <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
+              <li className="transition duration-400 hover:bg-sky-200 w-full h-full">
                 <Link to="/about" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const Sidebar = () => {
                   <span>about</span>
                 </Link>
               </li>
-              <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
+              <li className="transition duration-400 hover:bg-sky-200 w-full h-full">
                 <Link to="/contact" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ const Sidebar = () => {
                   <span>contact us</span>
                 </Link>
               </li>
-              <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
+              <li className="transition duration-400 hover:bg-sky-200 w-full h-full">
                 <Link to="/privacy" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
