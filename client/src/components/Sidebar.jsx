@@ -6,7 +6,7 @@ const Sidebar = () => {
     <div className="flex">
       <aside className="absolute inset-y-0 left-0 w-1/6 bg-sky-100 min-h-screen">
         <div className="sticky top-0 py-4 w-full">
-          <div className="text-center font-bold ">emotes</div>
+          <div className="text-center font-extrabold ">emotes</div>
           <nav>
             <ul className="flex flex-col pt-4 overflow-hidden">
               <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
@@ -25,11 +25,11 @@ const Sidebar = () => {
                       d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
                     />
                   </svg>
-                  <span>create a post</span>
+                  <span className="font-bold">create a post</span>
                 </Link>
               </li>
               <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
-                <a href="#" className="flex items-center h-8 px-2 py-6">
+                <Link to="/" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 mr-1"
@@ -45,10 +45,10 @@ const Sidebar = () => {
                     />
                   </svg>
                   <span>home / community</span>
-                </a>
+                </Link>
               </li>
               <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
-                <a href="#" className="flex items-center h-8 px-2 py-6">
+                <Link to="/analysis" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 mr-1"
@@ -64,9 +64,9 @@ const Sidebar = () => {
                     />
                   </svg>
                   <span>analysis</span>
-                </a>
+                </Link>
               </li>
-              <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
+              {/* <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
                 <a href="#" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -84,9 +84,9 @@ const Sidebar = () => {
                   </svg>
                   <span>archive</span>
                 </a>
-              </li>
+              </li> */}
               <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
-                <a href="#" className="flex items-center h-8 px-2 py-6">
+                <Link to="/about" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 mr-1"
@@ -102,10 +102,10 @@ const Sidebar = () => {
                     />
                   </svg>
                   <span>about</span>
-                </a>
+                </Link>
               </li>
               <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
-                <a href="#" className="flex items-center h-8 px-2 py-6">
+                <Link to="/contact" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 mr-1"
@@ -121,10 +121,10 @@ const Sidebar = () => {
                     />
                   </svg>
                   <span>contact us</span>
-                </a>
+                </Link>
               </li>
               <li className="transition duration-500 hover:bg-sky-200 w-full h-full">
-                <a href="#" className="flex items-center h-8 px-2 py-6">
+                <Link to="/privacy" className="flex items-center h-8 px-2 py-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 mr-1"
@@ -140,7 +140,7 @@ const Sidebar = () => {
                     />
                   </svg>
                   <span>privacy agreement</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

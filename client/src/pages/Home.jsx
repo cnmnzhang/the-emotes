@@ -21,6 +21,11 @@ function Home() {
             body: "one more body",
             hearts: 99,
         },
+        {
+            title: "one more title",
+            body: "for symmetry",
+            hearts: 99,
+        },
     ];
     const [showSideBar, setShowSideBar] = useState(false);
 
@@ -81,7 +86,7 @@ function Home() {
                     tell the world how you feel
                 </Link>
 
-                <div className="container w-1/2">
+                <div className="container w-3/4">
                     <div className="flex flex-row flex-wrap overflow-auto space-x-4 py-4">
                         {sampleNotes.map((note) => {
                             return (
