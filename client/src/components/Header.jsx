@@ -5,11 +5,8 @@ import iceCreamSVG from "../assets/ice-cream-svgrepo-com.svg";
 function Header() {
   return (
     <header>
-      <div className="mx-auto flex max-w-7xl items-center justify-between p-4">
+      <div className="mx-auto flex w-full items-center justify-between p-8">
         <div className="flex center">
-          <div>
-            emotes
-          </div>
           <div className="flex items-center space-x-2">
             <button className="flex appearance-none p-1 text-gray-500 md:hidden">
               <img src={iceCreamSVG} alt="SVG" />

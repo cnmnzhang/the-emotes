@@ -15,3 +15,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.temporary-bounce {
+  -webkit-animation-iteration-count: 2;
+  animation-iteration-count: 2;
+}
