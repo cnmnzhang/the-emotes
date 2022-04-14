@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
@@ -11,67 +11,15 @@ import Header from "./components/Header";
 // import Signup from './pages/Signup';
 
 const App = () => {
-  const [showSideBar, setShowSideBar] = useState(false);
-
-  const toggleSideBar = () => {
-    setShowSideBar(!showSideBar);
-  };
-  const sideBar = () => {
-    if (showSideBar) {
-      return (
-        <div className="flex flex-row">
-          <Sidebar />
-          <button
-            className="absolute left-2 top-2 cursor-pointer"
-            onClick={toggleSideBar}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 mr-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-        </div>
-      );
-    } else {
-      return (
-        <button
-          className="absolute left-2 top-2 cursor-pointer"
-          onClick={toggleSideBar}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 mr-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      );
-    }
-  };
 
   return (
     <Router key="router">
-      <div className="container fixed z-0 h-screen w-full bg-sky-50 overflow-auto">
+      <div className="container fixed z-0 h-screen w-full bg-sky-50 overflow-auto m-0">
+        <div className="flex flex-row">
         <Header />
-        <div className="z-10">{sideBar()}</div>
+        <Sidebar />
+
+        </div>
         <div className="z-0">
           <Routes key="routes">
             <Route path="/" element={<Home />} key="home" />
