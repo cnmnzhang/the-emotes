@@ -7,7 +7,9 @@ const Sidebar = () => {
   return (
     <aside className="flex absolute inset-y-0 left-0 w-1/6 bg-sky-100 transition max-height duration-500 ease-in-out;">
       <div className="sticky top-0 py-4 w-full">
+        <Link to="/">
         <div className="text-center font-extrabold ">emotes</div>
+        </Link>
         <nav>
           <ul className="flex flex-col pt-4 overflow-hidden">
             <li className="transition duration-500 hover:bg-sky-200 w-full h-full">

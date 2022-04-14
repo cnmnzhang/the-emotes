@@ -22,7 +22,7 @@ const App = () => {
         <div className="flex flex-row">
           <Sidebar />
           <button
-            className="absolute left-2 top-2 cursor-pointer"
+            className="absolute left-4 top-4 cursor-pointer"
             onClick={toggleSideBar}
           >
             <svg
@@ -45,7 +45,7 @@ const App = () => {
     } else {
       return (
         <button
-          className="absolute left-2 top-2 cursor-pointer"
+          className="absolute left-4 top-4 cursor-pointer"
           onClick={toggleSideBar}
         >
           <svg
@@ -69,10 +69,10 @@ const App = () => {
 
   return (
     <Router key="router">
-      <div className="container fixed z-0 h-screen w-full bg-sky-50 overflow-auto">
+      <div className="container h-screen w-screen bg-sky-50 overflow-auto">
         <Header />
-        <div className="z-10">{sideBar()}</div>
-        <div className="z-0">
+        <div className="">{sideBar()}</div>
+        <div className=" container ml-20 ">
           <Routes key="routes">
             <Route path="/" element={<Home />} key="home" />
             <Route path="/create" element={<CreatePost />} key="createPost" />
