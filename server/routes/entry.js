@@ -14,7 +14,7 @@ const ObjectId = require("mongodb").ObjectId;
 
 // This section will help you get a list of all the entries.
 router.route("/entry").get(function (req, res) {
-  let db_connect = dbo.getDb("employees");
+  let db_connect = dbo.getDb("emotes");
   db_connect
     .collection("entries")
     .find({})
