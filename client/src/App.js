@@ -69,10 +69,9 @@ const App = () => {
 
   return (
     <Router key="router">
-      <div className="container fixed z-0 h-screen w-screen bg-sky-50 overflow-auto">
+      <div className="container fixed z-0 h-screen w-full bg-sky-50 overflow-auto">
         <Header />
         <div className="z-10">{sideBar()}</div>
-
         <div className="z-0">
           <Routes key="routes">
             <Route path="/" element={<Home />} key="home" />
