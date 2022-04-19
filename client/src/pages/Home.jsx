@@ -29,12 +29,12 @@ function Home() {
   return (
     <div className="my-40 py-2 px-2 flex flex-col items-center align-center">
       <div className="App-header text-8xl font-semibold">emotes</div>
-      <p className="text-3xl py-2">
+      <p className="text-3xl ">
         a safe space for community based journaling and mood analyzing to
         promote self care
       </p>
 
-      <div className="w-1/2 border-t border-gray-300 my-10" />
+      <div className="w-1/2 border-t border-gray-300 my-20" />
 
       <Link
         to="/create"
