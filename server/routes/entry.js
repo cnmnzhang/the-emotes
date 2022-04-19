@@ -40,9 +40,9 @@ router.route("/entry/:id").get(function (req, res) {
 router.route("/entry/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
-    name: req.body.person_name,
-    position: req.body.person_position,
-    level: req.body.person_level,
+    emotion: req.body.emotion,
+    body: req.body.body,
+    hearts: req.body.hearts,
   };
   db_connect.collection("entries").insertOne(myobj, function (err, res) {
     if (err) throw err;

@@ -1,12 +1,33 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
+  const navigate = useNavigate();
   const [entryTitle, setTitle] = useState("");
   const [entryBody, setBody] = useState("");
 
-  const submitEntry = () => {
-    console.log(entryTitle);
-    console.log(entryBody);
+  const submitEntry = async () => {
+    try {
+      async function submit() {
+        // const createPost = async (entryTitle , entryBody) =>
+        // axiosCallWrapper(axios.post(`${API_URL}entry/add`));
+        // createPost()
+      }
+
+      submit();
+
+      navigate(`/`);
+      toast.success("Post submitted!", {
+        position: toast.POSITION.TOP_RIGHT,
+        theme: "dark",
+      });
+    } catch (err) {
+      toast.warning("Failed to submit post", {
+        position: toast.POSITION.TOP_RIGHT,
+        theme: "dark",
+      });
+    }
   };
 
   return (
