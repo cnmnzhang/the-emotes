@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import API from "../services/api";
+
 
 const CreatePost = () => {
   const navigate = useNavigate();
@@ -9,13 +11,10 @@ const CreatePost = () => {
 
   const submitEntry = async () => {
     try {
-      async function submit() {
-        // const createPost = async (entryTitle , entryBody) =>
-        // axiosCallWrapper(axios.post(`${API_URL}entry/add`));
-        // createPost()
-      }
-
-      submit();
+      await API.createEntry({
+        entryTitle,
+        entryBody
+      });
 
       navigate(`/`);
       toast.success("Post submitted!", {
