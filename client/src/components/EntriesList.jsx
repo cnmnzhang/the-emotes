@@ -19,27 +19,22 @@ export default function EntriesList() {
     fetchData();
   }, []);
 
-  // This method will map out the entries on the table
-  function entriesList() {
-    return entries.map((entry) => {
-      return <Entry title={entry.title} body={entry.body} hearts={entry._id} />;
-    });
-  }
-
   // This following section will display the table with the records of individuals.
   return (
     <div>
-      <h3>Record List</h3>
-      <table className="table table-striped" style={{ marginTop: 20 }}>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Level</th>
-          </tr>
-        </thead>
-        <tbody>{entriesList()}</tbody>
-      </table>
+      <div className="flex flex-row justify-center flex-wrap overflow-auto space-x-4 py-4">
+          {entries.map((note) => {
+            return (
+              <div>
+                <Entry
+                  title={note.title}
+                  body={note.body}
+                  hearts={note.hearts}
+                />
+              </div>
+            );
+          })}
+        </div>
     </div>
   );
 }
