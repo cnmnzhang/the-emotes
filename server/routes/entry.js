@@ -21,7 +21,6 @@ router.route("/entry").get(function (req, res) {
     .toArray(function (err, result) {
       if (err) throw err;
       res.json(result);
-      console.log(result);
     });
 });
 
@@ -51,28 +50,29 @@ router.route("/entry/add").post(function (req, response) {
   });
 });
 
-// // This section will help you update a entry by id.
-// router.route("/update/:id").post(function (req, response) {
-//   let db_connect = dbo.getDb();
-//   let myquery = { _id: ObjectId( req.params.id )};
-//   let newvalues = {
-//     $set: {
-//       person_name: req.body.person_name,
-//       person_position: req.body.person_position,
-//       person_level: req.body.person_level,
-//     },
-//   };
-//   db_connect
-//     .collection("entries")
-//     .updateOne(myquery, newvalues, function (err, res) {
-//       if (err) throw err;
-//       console.log("1 document updated");
-//       response.json(res);
-//     });
-// });
+// This section will help you update a entry by id.
+router.route(`/entry/update/:entryID`).post(function (req, response) {
+  let db_connect = dbo.getDb();
+  let myquery = { _id: ObjectId( req.params.entryID )};
+  let newvalues = {
+    $set: {
+      
+      emotion: req.body.emotion,
+      body: req.body.body,
+      hearts: req.body.hearts,
+    },
+  };
+  db_connect
+    .collection("entries")
+    .updateOne(myquery, newvalues, function (err, res) {
+      if (err) throw err;
+      console.log("1 document updated");
+      response.json(res);
+    });
+});
 
 // This section will help you delete a entry
-router.route("/:id").delete((req, response) => {
+router.route("entry/delete/:id").delete((req, response) => {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId( req.params.id )};
   db_connect.collection("entries").deleteOne(myquery, function (err, obj) {
