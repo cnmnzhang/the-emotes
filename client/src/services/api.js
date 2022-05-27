@@ -10,7 +10,6 @@ const getAllEntries = async () => {
     return;
   }
   const entries = await response.json();
-  console.log(response);
   return entries;
 };
 

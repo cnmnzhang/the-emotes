@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ApiClient from "../services/api";
 
 const Entry = ({ entryID, title, body, hearts }) => {
   const [like, setLike] = useState(false);
   const [numHearts, setNumHearts] = useState(parseInt(hearts));
+  const [color, setColor] = useState("bg-gray-300");
 
   function heartClicked() {
     setLike(true);
@@ -65,12 +66,39 @@ const Entry = ({ entryID, title, body, hearts }) => {
       </div>
     );
   }
+
+  useEffect(() => {
+    function textColor() {
+      const text = title + " " + body;
+      const colorML = {
+        "bg-red-200": ["angry", "mad", "furious", "hungry"], 
+        "bg-yellow-200": ["mellow", "sun", "happy", "new"],
+        "bg-green-200": ["need", "grow", "outside", "earth"],
+        "bg-blue-200": ["blue", "sad", "water", "jazzy"],
+        "bg-gray-200": ["gray"],
+        "bg-purple-200": ["amazing", "berry"], 
+      };
+  
+      for (const [key, value] of Object.entries(colorML)) {
+        value.forEach((val, i) => {
+          if (text.includes(val)) {
+            console.log(key);
+            setColor(key);
+          }
+        });
+      }
+    }
+
+    textColor();
+  }, []);
+
+  
   return (
-    <div className="h-60 w-48 px-4 py-2 border border-gray-100 bg-rose-100 rounded-xl">
+    <div className={`h-60 w-48 px-4 py-2 border border-gray-100 bg-rose-100 ${color} rounded-xl transition hover:shadow-lg duration:500`}>
       {heartButton()}
 
-      <div className="mt-4 text-gray-500 sm:pr-8">
-        <h1 className="mt-4 text-xl font-bold text-gray-900">{title}</h1>
+      <div className="mt-4 sm:pr-8">
+        <h1 className="mt-4 text-xl font-bold">{title}</h1>
         <p className="hidden mt-2 text-sm sm:block">{body}</p>
       </div>
     </div>

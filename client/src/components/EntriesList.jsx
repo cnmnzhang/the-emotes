@@ -22,7 +22,7 @@ export default function EntriesList() {
   // This following section will display the table with the records of individuals.
   return (
     <div>
-      <div className="flex flex-row justify-center flex-wrap overflow-auto space-x-4 py-4 space-y-2">
+      <div className="flex flex-row flex-wrap content-center items-center w-full justify-center overflow-x-auto gap-x-4 gap-y-4">
           {entries.map((note) => {
             return (
               <div>
