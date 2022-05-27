@@ -1,12 +1,32 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import API from "../services/api";
+
 
 const CreatePost = () => {
+  const navigate = useNavigate();
   const [entryTitle, setTitle] = useState("");
   const [entryBody, setBody] = useState("");
 
-  const submitEntry = () => {
-    console.log(entryTitle);
-    console.log(entryBody);
+  const submitEntry = async () => {
+    try {
+      // await API.createEntry({
+      //   entryTitle,
+      //   entryBody
+      // });
+
+      navigate(`/`);
+      toast.success("Post submitted!", {
+        position: toast.POSITION.TOP_RIGHT,
+        theme: "dark",
+      });
+    } catch (err) {
+      toast.warning("Failed to submit post", {
+        position: toast.POSITION.TOP_RIGHT,
+        theme: "dark",
+      });
+    }
   };
 
   return (
@@ -39,24 +59,7 @@ const CreatePost = () => {
             <div className="flex space-x-1">
               <button
                 type="button"
-                className="inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center rounded bg-white px-2 py-2 text-xs font-medium text-gray-800 transition hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300"
-              >
-                <svg
-                  className="h-4 w-4 shrink-0 stroke-gray-500"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    d="M96,176l95.8-92.2a28,28,0,0,0-39.6-39.6L54.1,142.1a47.9,47.9,0,0,0,67.8,67.8L204,128"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="24"
-                  ></path>
-                </svg>
-              </button>
-              <button
-                type="button"
-                className="inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center rounded bg-white px-2 py-2 text-xs font-medium text-gray-800 transition hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300"
+                className="inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center rounded bg-white px-2 py-2 text-sm text-gray-800 transition hover:bg-gray-100 focus:border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300"
               >
                 <svg
                   className="h-4 w-4 shrink-0 fill-gray-500 stroke-gray-500"
@@ -84,12 +87,12 @@ const CreatePost = () => {
               </button>
             </div>
             <button
-              type="submit"
-              className="inline-flex w-auto cursor-pointer select-none appearance-none items-center justify-center space-x-1 rounded border border-blue-700 bg-blue-700 px-3 py-1.5 text-xs font-medium text-white transition hover:border-blue-800 hover:bg-blue-800 focus:border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
-              onClick={submitEntry()}
-            >
-              Comment
-            </button>
+                className="shadow bg-rose-300 hover:bg-rose-400 focus:shadow-outline focus:ring-2 focus:ring-rose-300 text-white text-sm font-sm font-bold py-1.5 px-3 rounded"
+                type="submit"
+                onClick={submitEntry()}
+              >
+                Send
+              </button>
           </div>
         </div>
       </div>
