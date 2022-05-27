@@ -96,7 +96,6 @@ const Entry = ({ entryID, title, body, hearts }) => {
   return (
     <div className={`h-60 w-48 px-4 py-2 border border-gray-100 bg-rose-100 ${color} rounded-xl transition hover:shadow-lg duration:500`}>
       {heartButton()}
-
       <div className="mt-4 sm:pr-8">
         <h1 className="mt-4 text-xl font-bold">{title}</h1>
         <p className="hidden mt-2 text-sm sm:block">{body}</p>

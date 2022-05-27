@@ -6,7 +6,7 @@ function Home() {
 
   return (
     <div className="my-40 py-2 px-2 flex flex-col items-center align-center">
-      <div className="App-header text-8xl font-semibold">emotes</div>
+      <div className="App-header text-8xl font-semibold mb-4">emotes</div>
       <p className="text-3xl ">
         a safe space for community based journaling and mood analyzing to
         promote self care
