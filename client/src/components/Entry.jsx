@@ -1,13 +1,22 @@
 import React, { useState } from "react";
+import ApiClient from "../services/api";
 
-const Entry = ({ title, body, hearts }) => {
+const Entry = ({ entryID, title, body, hearts }) => {
   const [like, setLike] = useState(false);
-  console.log(hearts);
   const [numHearts, setNumHearts] = useState(parseInt(hearts));
 
   function heartClicked() {
     setLike(true);
     setNumHearts(numHearts + 1);
+
+    const updateData = async () => {
+      try {
+        const response = await ApiClient.updateEntry(entryID, title, body, numHearts);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    updateData();
   }
 
   function heartButton() {
