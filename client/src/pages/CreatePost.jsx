@@ -11,10 +11,10 @@ const CreatePost = () => {
 
   const submitEntry = async () => {
     try {
-      // await API.createEntry({
-      //   entryTitle,
-      //   entryBody
-      // });
+      await API.createEntry(
+        entryTitle,
+        entryBody
+      );
 
       navigate(`/`);
       toast.success("Post submitted!", {
@@ -70,18 +70,18 @@ const CreatePost = () => {
                     cy="128"
                     r="96"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="24"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="24"
                   ></circle>
                   <circle cx="92" cy="108" r="16"></circle>
                   <circle cx="164" cy="108" r="16"></circle>
                   <path
                     d="M169.6,152a48.1,48.1,0,0,1-83.2,0"
                     fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="24"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="24"
                   ></path>
                 </svg>
               </button>
@@ -89,7 +89,7 @@ const CreatePost = () => {
             <button
                 className="shadow bg-rose-300 hover:bg-rose-400 focus:shadow-outline focus:ring-2 focus:ring-rose-300 text-white text-sm font-sm font-bold py-1.5 px-3 rounded"
                 type="submit"
-                onClick={submitEntry()}
+                onClick={() => submitEntry()}
               >
                 Send
               </button>

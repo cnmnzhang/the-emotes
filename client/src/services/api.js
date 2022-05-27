@@ -10,6 +10,7 @@ const getAllEntries = async () => {
     return;
   }
   const entries = await response.json();
+  console.log(response);
   return entries;
 };
 
@@ -30,7 +31,7 @@ const createEntry = async (userEmotion, userBody) => {
 const updateEntry = async (entryID, userEmotion, userBody, heartsCount) => {
   const entry = { emotion: userEmotion, body: userBody, hearts: heartsCount };
   await fetch(`${API_URL}entry/update/${entryID}`, {
-    method: "POST",
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
@@ -44,6 +45,7 @@ const updateEntry = async (entryID, userEmotion, userBody, heartsCount) => {
 const API = {
   getAllEntries,
   createEntry,
+  updateEntry
 };
 
 export default API;

@@ -42,7 +42,7 @@ router.route("/entry/add").post(function (req, response) {
   let myobj = {
     emotion: req.body.emotion,
     body: req.body.body,
-    hearts: req.body.hearts,
+    hearts: 0,
   };
   db_connect.collection("entries").insertOne(myobj, function (err, res) {
     if (err) throw err;
@@ -51,12 +51,11 @@ router.route("/entry/add").post(function (req, response) {
 });
 
 // This section will help you update a entry by id.
-router.route(`/entry/update/:entryID`).post(function (req, response) {
+router.route(`/entry/update/:id`).put(function (req, response) {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId( req.params.entryID )};
+  let myquery = { _id: ObjectId( req.params.id )};
   let newvalues = {
     $set: {
-      
       emotion: req.body.emotion,
       body: req.body.body,
       hearts: req.body.hearts,
@@ -72,7 +71,7 @@ router.route(`/entry/update/:entryID`).post(function (req, response) {
 });
 
 // This section will help you delete a entry
-router.route("entry/delete/:id").delete((req, response) => {
+router.route("/entry/delete/:id").delete((req, response) => {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId( req.params.id )};
   db_connect.collection("entries").deleteOne(myquery, function (err, obj) {
