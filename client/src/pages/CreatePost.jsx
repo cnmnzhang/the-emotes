@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 
-
 const CreatePost = () => {
   const navigate = useNavigate();
   const [entryTitle, setTitle] = useState("");
@@ -11,10 +10,7 @@ const CreatePost = () => {
 
   const submitEntry = async () => {
     try {
-      await API.createEntry(
-        entryTitle,
-        entryBody
-      );
+      await API.createEntry(entryTitle, entryBody);
 
       navigate(`/`);
       toast.success("Post submitted!", {
@@ -87,12 +83,12 @@ const CreatePost = () => {
               </button>
             </div>
             <button
-                className="shadow bg-rose-300 hover:bg-rose-400 focus:shadow-outline focus:ring-2 focus:ring-rose-300 text-white text-sm font-sm font-bold py-1.5 px-3 rounded"
-                type="submit"
-                onClick={() => submitEntry()}
-              >
-                Send
-              </button>
+              className="shadow bg-rose-300 hover:bg-rose-400 focus:shadow-outline focus:ring-2 focus:ring-rose-300 text-white text-sm font-sm font-bold py-1.5 px-3 rounded"
+              type="submit"
+              onClick={() => submitEntry()}
+            >
+              Send
+            </button>
           </div>
         </div>
       </div>

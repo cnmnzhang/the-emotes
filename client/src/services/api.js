@@ -41,10 +41,23 @@ const updateEntry = async (entryID, userEmotion, userBody, heartsCount) => {
   });
 };
 
+const deleteEntry = async (entryID) => {
+  await fetch(`${API_URL}entry/delete/${entryID}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).catch((error) => {
+    window.alert(error);
+    return;
+  });
+};
+
 const API = {
   getAllEntries,
   createEntry,
-  updateEntry
+  updateEntry,
+  deleteEntry,
 };
 
 export default API;

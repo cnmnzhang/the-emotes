@@ -23,19 +23,19 @@ export default function EntriesList() {
   return (
     <div>
       <div className="flex flex-row flex-wrap content-center items-center w-full justify-center overflow-x-auto gap-x-4 gap-y-4">
-          {entries.map((note) => {
-            return (
-              <div>
-                <Entry
-                  entryID={note._id}
-                  title={note.emotion}
-                  body={note.body}
-                  hearts={note.hearts}
-                />
-              </div>
-            );
-          })}
-        </div>
+        {entries.map((note) => {
+          return (
+            <div>
+              <Entry
+                entryID={note._id}
+                title={note.emotion}
+                body={note.body}
+                hearts={note.hearts}
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
