@@ -27,7 +27,7 @@ export default function EntriesList() {
             return (
               <div>
                 <Entry
-                  title={note.title}
+                  title={note.emotion}
                   body={note.body}
                   hearts={note.hearts}
                 />
