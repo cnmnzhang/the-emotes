@@ -11,7 +11,7 @@ const Entry = ({ entryID, title, body, hearts }) => {
 
     const updateData = async () => {
       try {
-        const response = await ApiClient.updateEntry(entryID, title, body, numHearts);
+        const response = await ApiClient.updateEntry(entryID, title, body, numHearts+1);
       } catch (err) {
         console.log(err);
       }
