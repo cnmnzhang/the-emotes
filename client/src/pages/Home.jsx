@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div className="my-40 py-2 px-2 flex flex-col items-center align-center">
-      <div className="App-header text-8xl font-semibold mb-4">emotes</div>
+    <div className="my-2 flex flex-col items-center align-center">
+      <div className="text-8xl font-semibold mb-4">emotes</div>
       <p className="text-3xl ">
         a safe space for community based journaling and mood analyzing to
         promote self care
@@ -20,7 +20,7 @@ function Home() {
         create a post and tell the world how you feel
       </Link>
 
-      <div className="container w-3/4">
+      <div className="w-3/4">
         <EntriesList />
       </div>
     </div>

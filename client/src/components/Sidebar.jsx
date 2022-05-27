@@ -87,25 +87,6 @@ const Sidebar = () => {
                 </a>
               </li> */}
             <li className="transition duration-400 hover:bg-sky-200 w-full h-full">
-              <Link to="/about" className="flex items-center h-8 px-2 py-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <span>about</span>
-              </Link>
-            </li>
-            <li className="transition duration-400 hover:bg-sky-200 w-full h-full">
               <Link to="/contact" className="flex items-center h-8 px-2 py-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
