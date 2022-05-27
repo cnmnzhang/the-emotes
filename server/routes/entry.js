@@ -51,15 +51,14 @@ router.route("/entry/add").post(function (req, response) {
 });
 
 // This section will help you update a entry by id.
-router.route(`/entry/update/:entryID`).post(function (req, response) {
+router.route(`/entry/update/:id`).post(function (req, response) {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId( req.params.entryID )};
+  let myquery = { _id: ObjectId( req.params.id )};
   let newvalues = {
     $set: {
-      
       emotion: req.body.emotion,
       body: req.body.body,
-      hearts: req.body.hearts,
+      hearts: 0,
     },
   };
   db_connect
