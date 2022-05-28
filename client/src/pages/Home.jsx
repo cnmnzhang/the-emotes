@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import EntriesList from "../components/EntriesList";
-import { Link } from "react-router-dom";
 import CreatePost from "../components/CreatePost";
 
 function Home() {
@@ -25,23 +24,31 @@ function Home() {
       </p>
 
       <p className="text-xl w-1/2 mb-4 text-center">
-        enter the emotes world by viewing others submissions below and feel free to react with love!
+        enter the emotes world by <a
+        href="#entries"
+        className="cursor-pointer transition duration-500 hover:text-rose-400 underline decoration-dotted">
+        viewing others submissions below
+      </a> and feel free to react with love!
         or just start expressing and releasing inner emotions, and
       </p>
+
+      
 
 
       <button
         onClick={toggleCreate}
-        className="text-xl py-2 cursor-pointer transition-[text_1s,underline_2s] duration-500 hover:text-rose-400 hover:underline decoration-dotted "
+        className="text-xl py-2 mb-4 cursor-pointer transition duration-500 hover:text-rose-400 underline decoration-dotted "
       >
-        ~create a post and tell the world how you feel~
+        create a post and tell the world how you feel
       </button>
 
       { create && (
+        <div className="w-1/2 mb-4">
         <CreatePost />
+          </div>
       )}
 
-      <div className="w-3/4">
+      <div className="w-3/4 my-4" id="entries">
         <EntriesList />
       </div>
     </div>
