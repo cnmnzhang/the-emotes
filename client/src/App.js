@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CreatePost from "./components/CreatePost";
 import Home from "./pages/Home";
 import Analysis from "./pages/Analysis";
 import Contact from "./pages/Contact";
@@ -74,7 +73,6 @@ const App = () => {
         <div className=" container ml-20 ">
           <Routes key="routes">
             <Route path="/" element={<Home />} key="home" />
-            <Route path="/create" element={<CreatePost />} key="createPost" />
             <Route path="/analysis" element={<Analysis />} key="analysis" />
             <Route path="/contact" element={<Contact />} key="contact" />
             <Route
