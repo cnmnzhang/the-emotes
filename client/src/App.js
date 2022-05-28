@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CreatePost from "./pages/CreatePost";
+import CreatePost from "./components/CreatePost";
 import Home from "./pages/Home";
 import Analysis from "./pages/Analysis";
 import Contact from "./pages/Contact";
