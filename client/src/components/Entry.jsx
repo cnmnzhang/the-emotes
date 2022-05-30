@@ -1,4 +1,4 @@
-import React, { useState, useEffect, } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ApiClient from "../services/api";
 import { toast } from "react-toastify";
@@ -15,12 +15,7 @@ const Entry = ({ entryID, title, body, hearts }) => {
 
     const updateData = async () => {
       try {
-        await ApiClient.updateEntry(
-          entryID,
-          title,
-          body,
-          numHearts + 1
-        );
+        await ApiClient.updateEntry(entryID, title, body, numHearts + 1);
       } catch (err) {
         console.log(err);
       }
@@ -98,9 +93,18 @@ const Entry = ({ entryID, title, body, hearts }) => {
 
     return (
       <button onClick={trashClicked}>
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="gray">
-  <path fillRule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clipRule="evenodd" />
-</svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="gray"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z"
+            clipRule="evenodd"
+          />
+        </svg>
       </button>
     );
   }
@@ -133,10 +137,9 @@ const Entry = ({ entryID, title, body, hearts }) => {
     <div
       className={`h-60 w-48 px-4 py-2 border border-gray-100 ${color} rounded-xl transition hover:shadow-lg duration:500`}
     >
-      
       <div className="flex flex-row justify-between">
-      {heartButton()}
-      {trashButton()}
+        {heartButton()}
+        {trashButton()}
       </div>
       <div className="mt-4 sm:pr-8">
         <h1 className="mt-4 text-xl font-bold">{title}</h1>

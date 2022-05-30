@@ -6,7 +6,7 @@ function Home() {
   const [create, setCreate] = useState(false);
   const toggleCreate = () => {
     setCreate(!create);
-  }
+  };
 
   return (
     <div className="my-40 flex flex-col items-center align-center">
@@ -19,21 +19,22 @@ function Home() {
       </p>
 
       <p className="text-xl w-1/2 mb-4 text-center">
-        with a mission to promote self care through encouraging self expression in a forum.
-        a personalized journaling space with machine learning algorithm generated feedback.
+        with a mission to promote self care through encouraging self expression
+        in a forum. a personalized journaling space with machine learning
+        algorithm generated feedback.
       </p>
 
       <p className="text-xl w-1/2 mb-4 text-center">
-        enter the emotes world by <a
-        href="#entries"
-        className="cursor-pointer transition duration-500 hover:text-rose-400 underline decoration-dotted">
-        viewing others submissions below
-      </a> and feel free to react with love!
-        or just start expressing and releasing inner emotions, and
+        enter the emotes world by{" "}
+        <a
+          href="#entries"
+          className="cursor-pointer transition duration-500 hover:text-rose-400 underline decoration-dotted"
+        >
+          viewing others submissions below
+        </a>{" "}
+        and feel free to react with love! or just start expressing and releasing
+        inner emotions, and
       </p>
-
-      
-
 
       <button
         onClick={toggleCreate}
@@ -42,10 +43,10 @@ function Home() {
         create a post and tell the world how you feel
       </button>
 
-      { create && (
+      {create && (
         <div className="w-1/2 mb-4">
-        <CreatePost />
-          </div>
+          <CreatePost />
+        </div>
       )}
 
       <div className="w-3/4 my-4" id="entries">
