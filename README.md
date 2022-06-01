@@ -1,27 +1,15 @@
 # The Emotes
 Working to create a journaling and self-care website and app that includes an anonymous, community-based forum and a user-specific, personalized space for self-expression and feedback. This application is being built using the MERN stack with a client front-end and a server back-end. 
 
-**Team**
-
-| Name                   | JHU Email           | GitHub Username |
-| ---------------------- | ------------------- | --------------- |
-| Stella Hong            | shong62@jhu.edu     | stellahong0128  |
-| Rachel Xu              | rxu32@jhu.edu       |                 |
-| Katie Zhang            | kzhang70@jhu.edu    | lightcereal     |
-| Cindy Zhang            | czhan117@jhu.edu    | czhan117        |
-
-
 ## Deployments
-coming soon!
-<!-- * App: [https://jhu-bonsai.herokuapp.com/](https://jhu-bonsai.herokuapp.com/)
-* API: [https://jhu-bonsai-api.herokuapp.com/](https://jhu-bonsai-api.herokuapp.com/) -->
+* App: [https://the-emotes.herokuapp.com/](https://the-emotes.herokuapp.com/)
+* API: [https://the-emotes-api.herokuapp.com/](https://the-emotes-api.herokuapp.com/)
 
 ## Documentation
 * [Project Document](https://docs.google.com/document/d/10v6VU6ZDR-e_daNKEkWLCLpvgx5ITTfDeZg2vJAx4DI/edit?usp=sharing)
-* user manual and api documentation coming soon!
 
 ## Installing / Getting started
-[Node.js](https://nodejs.org/en/download/) is required.
+[Node.js](https://nodejs.org/en/download/) is required. Other used tools are MongoDB and Heroku along with node packages, which are listed in `server/package.json` and `client/package.json`. They will be installed when running the installation processes above.
 To run the app locally, follow the instructions below.
 
 ### Backend
@@ -42,15 +30,18 @@ $ npm install
 $ npm start
 ```
 
-## Developing
+## Deployment
+We have multiple heroku apps in one repository.
 
-### Tools 
-* [Node.js](https://nodejs.org/en/download/)
-* [MongoDB](https://www.mongodb.com/)
-* [Heroku](https://www.heroku.com/home)
-* [VSCode](https://code.visualstudio.com/Download)
+Before a developer has ever deployed, they should cd to the top of the repo and run:
+```shell
+$ heroku login
+$ heroku git:remote -a the-emotes
+$ heroku git:remote -a the-emotes-api
+```
+After doing above one time, they can always deploy with:
 
-Other tools are node packages, which are listed in `code/backend/package.json` and `code/frontend/package.json`. They will be installed when running the installation processes above
-
-### Testing 
-coming soon!
+```shell
+$ git subtree push --prefix client the-emotes main
+$ git subtree push --prefix server the-emotes-api main
+```
